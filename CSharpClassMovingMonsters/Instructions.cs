@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace CSharpClassMovingMonsters
 {
-    public partial class Form2 : Form
+    public partial class Instructions : Form
     {
-        public Form2()
+        public Instructions()
         {
 
             InitializeComponent();
@@ -21,21 +21,13 @@ namespace CSharpClassMovingMonsters
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            //minimize current window
+            //Minimize current window
             this.WindowState = FormWindowState.Minimized;
-            Form1 f = new Form1();
+            Home f = new Home();
             f.ShowDialog();
             this.WindowState = FormWindowState.Normal;
         }
 
-        private void TextBox1_TextChanged(object sender, EventArgs e)
-        {
 
-        }
-
-        private void TextBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }

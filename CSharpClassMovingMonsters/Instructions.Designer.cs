@@ -1,6 +1,6 @@
 ﻿namespace CSharpClassMovingMonsters
 {
-    partial class Form2
+    partial class Instructions
     {
         /// <summary>
         /// Required designer variable.
@@ -46,7 +46,7 @@
             this.textBox2.TabStop = false;
             this.textBox2.Text = "\r\nWELCOME TO THE MONKEY RACES";
             this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBox2.TextChanged += new System.EventHandler(this.TextBox2_TextChanged);
+//            this.textBox2.TextChanged += new System.EventHandler(this.TextBox2_TextChanged);
             // 
             // textBox1
             // 
@@ -64,7 +64,7 @@
     " \r\n3. Start the Race \r\n4. Reset the Monkeys to kee betting or Reset the Monkeys " +
     "and the Punters to start again";
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBox1.TextChanged += new System.EventHandler(this.TextBox1_TextChanged);
+//            this.textBox1.TextChanged += new System.EventHandler(this.TextBox1_TextChanged);
             // 
             // button1
             // 

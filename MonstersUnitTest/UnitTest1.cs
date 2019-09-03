@@ -10,7 +10,7 @@ namespace MonstersUnitTest
     {
 
         // make an instance of the form
-        Form1 myForm1 = new Form1();
+        Home myForm1 = new Home();
         Punter[] myPunter = new Punter[2];
 
         [TestMethod]
@@ -20,8 +20,6 @@ namespace MonstersUnitTest
             //act
             myPunter[0] = Factory.GetAPunter(0);
             //assert
-            //  Assert.IsNotNull(Punter.ToString());
-
             Assert.AreEqual("Howard", myPunter[0].PunterName);
 
         }
@@ -33,8 +31,6 @@ namespace MonstersUnitTest
             //act
             myPunter[0] = Factory.GetAPunter(1);
             //assert
-            //  Assert.IsNotNull(Punter.ToString());
-
             Assert.AreEqual("Howard", myPunter[0].PunterName);
 
         }

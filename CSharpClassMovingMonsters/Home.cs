@@ -13,12 +13,11 @@ using CSharpClassMovingMonsters.Business.AllPunters;
 
 namespace CSharpClassMovingMonsters
 {
-    public partial class Form1 : Form
+    public partial class Home : Form
     {
         //Create my monsters
         Monster[] monster = new Monster[4];
         Punter[] myPunter;
-
         Punter CurrentPunter = new Howard();
 
         //Which monster wins
@@ -28,7 +27,7 @@ namespace CSharpClassMovingMonsters
 
 
 
-        public Form1()
+        public Home()
         {
             this.TopMost = true;
             myPunter = new Punter[3];
@@ -85,7 +84,7 @@ namespace CSharpClassMovingMonsters
             Random myRand = new Random();
             Random myRandStop = new Random();
 
-            //while we haven't reached the end then keep on looping
+            //Keep looping if the end hasn't been reached
 
             while (end != true) // while the end is not true
             {
@@ -93,7 +92,7 @@ namespace CSharpClassMovingMonsters
                 {
                     monster[i].myPB.Left += myRand.Next(1, 7);
 
-                    // 50% of the time it takes 8 off the left which makes it go back
+                    // 50% of the time it takes 8 off the left, which makes it go back
                     if (myRandStop.Next(1, 3) == 2)
                     {
                         monster[i].myPB.Left -= 4;
@@ -101,8 +100,8 @@ namespace CSharpClassMovingMonsters
 
                     Application.DoEvents();
 
-                    //if the monster reaches the end of the form minus the width of the picturebox, then stop
-                    if (monster[i].myPB.Left > Form1.ActiveForm.Width - monster[i].myPB.Width - 40)
+                    //if the monster reaches the end of the form, minus the width of the picturebox, then stop
+                    if (monster[i].myPB.Left > Home.ActiveForm.Width - monster[i].myPB.Width - 40)
                     {
                         end = true; // loop until end =true
                         this.Text = monster[i].Name + " The Monster has won!!";
@@ -120,7 +119,7 @@ namespace CSharpClassMovingMonsters
         private void WinnerPunter()
         {
 
-            //updates cash if they won or lost
+            //Updates cash if they win or lose
             for (int i = 0; i < 3; i++)
             {
                 if (myPunter[i].Cash == 0)
@@ -141,10 +140,10 @@ namespace CSharpClassMovingMonsters
                 }
 
 
-                //checks the punters have money left, visually updates it, disables radio buttons if no money left
+                //Checks the punters have money left, visually updates it, disables radio buttons if no money left
                 switch (myPunter[i].PunterName)
                 {
-                    //instantiate that punter
+                    //Instantiate the punter
                     case "Howard":
                         lblHCash.Text = " has $" + myPunter[0].Cash.ToString();
                         if (myPunter[0].Cash <= 0)
@@ -208,13 +207,13 @@ namespace CSharpClassMovingMonsters
 
         }
 
-        //starts the race
+        //Starts the race
         private void BtnStart_Click(object sender, EventArgs e)
         {
             RunRace();
         }
 
-        // resets the monkeys
+        // Resets the monkeys
         private void BtnReset_Click(object sender, EventArgs e)
         {
             udBet.Maximum = (decimal)CurrentPunter.Cash;
@@ -229,7 +228,7 @@ namespace CSharpClassMovingMonsters
         }
 
 
-        //checks which punter is selected
+        //Checks which punter is selected
         private void AllRB_CheckedChanged(object sender, EventArgs e)
         {
             RadioButton fakeRB = new RadioButton();
@@ -239,10 +238,10 @@ namespace CSharpClassMovingMonsters
             {
 
 
-                //look for the name of the person we have clicked on 
+                //Look for the name of the person we have clicked on 
                 switch (fakeRB.Text)
                 {
-                    //instantiate that punter
+                    //Instantiate that punter
                     case "Howard":
 
                         CurrentPunter = myPunter[0];
@@ -262,14 +261,13 @@ namespace CSharpClassMovingMonsters
             }
         }
 
-        //Takes in who the punter bet on an how much $ bet
+        //Takes in who the punter bet on and how much $ is bet
         private void BtnBets_Click(object sender, EventArgs e)
 
         {
 
             CurrentPunter.Bet = (float)udBet.Value;
-            //  lblBettorName.Text += CurrentPunter.PunterName + " Bets " + CurrentPunter.Bet + "\r\n";
-
+            //  lblBettorName.Text += CurrentPunter.PunterName + " Bets " + CurrentPunter.Bet + "\r\n"
             //CurrentPunter.PunterName + " is the current Punter and bet $" + CurrentPunter.Bet;
             //  udBet.Maximum = (decimal)CurrentPunter.Cash;
             CurrentPunter.Monster = (int)udMonkey.Value;
@@ -306,9 +304,6 @@ namespace CSharpClassMovingMonsters
             this.Close();
 
         }
-
-
-
 
         //    private void RbHoward_MouseHover(object sender, EventArgs e)
         //   {

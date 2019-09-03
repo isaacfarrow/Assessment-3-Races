@@ -11,7 +11,7 @@ namespace CSharpClassMovingMonsters.Business
     {
         public string Name { get; set; }
 
-        //How far has the monster travelled
+        //How far has the monster traveled
 
         public int Length { get; set; }
 

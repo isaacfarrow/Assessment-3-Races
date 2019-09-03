@@ -12,7 +12,6 @@ namespace CSharpClassMovingMonsters.Business.AllPunters
         public Howard()
         {
             PunterName = "Howard";
-
             Cash = 50;
             MyColor = Color.DarkSeaGreen;
         }
